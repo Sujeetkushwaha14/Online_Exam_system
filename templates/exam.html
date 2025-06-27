@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Online Exam</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='exam.css') }}">
+
+</head>
+
+<body>
+  <center>
+    <h1 style="text-align: center; background: linear-gradient(to right, red, orange, yellow, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;"> DevOps Exam </h1>
+  </center>
+
+  <!-- Exam Rules -->
+  <div class="rules-box">
+    <h2>📋 Exam Rules</h2>
+    <ul style="text-align: left;">
+      <li>Don't refresh the page during the exam.</li>
+      <li>Each question has a time limit (Objective: 1 min, Descriptive: 2 min).</li>
+      <li>Do not switch tabs or minimize the browser window.</li>
+      <li>Once the time is over, the exam will be auto-submitted.</li>
+      <li>Click submit after last question to finish the exam early.</li>
+    </ul>
+    <button class="start-button" onclick="startExam()">Start Exam</button>
+  </div>
+
+  <!-- Exam Content -->
+  <div id="exam-content" style="display: none;">
+    <h2>👤 Welcome, {{ username }}!</h2>
+    <div class="timer-box">⏳ Time Left: <span id="timer">00:00</span></div>
+    <form id="exam-form" method="POST" action="/submit">
+      {% for q in questions %}
+      <div class="question-box">
+        <h3>Q{{ loop.index }}: {{ q.question }}</h3>
+        {% for opt in q.options %}
+        <label class="option-label">
+          <input type="radio" name="{{ q.id }}" value="{{ opt }}"> {{ opt }}
+        </label>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <div style="text-align:center;">
+        <button class="start-button" type="submit">Submit Exam</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const totalQuestions = {{ questions| length }};
+  </script>
+  <script src="{{ url_for('static', filename='exam.js') }}"></script>
+
+</body>
+
+</html>

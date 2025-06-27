@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f7;
+      padding: 30px;
+      text-align: center;
+    }
+    .result-box {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      margin: auto;
+    }
+    .question {
+      text-align: left;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+    .correct {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+    }
+    .wrong {
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+    .summary {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+        <h1 style="
+  text-align: center;
+  background: linear-gradient(to right, red, orange, rgb(222, 147, 82),  rgb(84, 84, 211), indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"> DevOps Exam </h1>
+    </center>
+  <div class="result-box">
+    <h2>🎉 Exam Completed</h2>
+    <div class="summary">
+      <p><strong>User:</strong> {{ username }}</p>
+      <p><strong>Score:</strong> {{ score }}/{{ total }}</p>
+    </div>
+
+    <h3>Review Your Answers:</h3>
+    {% for qid, detail in answers.items() %}
+      <div class="question {% if detail.status == 'Correct' %}correct{% else %}wrong{% endif %}">
+        <p><strong>Q:</strong> {{ detail.question }}</p>
+        <p><strong>Your Answer:</strong> {{ detail.selected or 'Not Answered' }}</p>
+        <p><strong>Correct Answer:</strong> {{ detail.correct }}</p>
+        <p><strong>Status:</strong> {{ detail.status }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

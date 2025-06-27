@@ -1,0 +1,9 @@
+<h2>Answer Review for {{ username }}</h2>
+{% for qid, item in answers.items() %}
+  <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+    <strong>Q:</strong> {{ item.question }}<br>
+    <strong>Your Answer:</strong> {{ item.selected }}<br>
+    <strong>Correct Answer:</strong> {{ item.correct }}<br>
+    <strong>Status:</strong> <span style="color: {{ 'green' if item.status == 'Correct' else 'red' }}">{{ item.status }}</span>
+  </div>
+{% endfor %}
