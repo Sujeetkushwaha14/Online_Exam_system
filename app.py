@@ -9,6 +9,7 @@ except ImportError as e:
 from flask import Flask, render_template, request, redirect, session
 import hashlib, threading, time
 from questions_module import get_questions
+from waitress import serve 
 
 app = Flask(__name__)
 app.secret_key = "secret"
@@ -179,4 +180,4 @@ def block_user():
     return redirect('/login')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    serve(app,host='0.0.0.0',port='5000')
