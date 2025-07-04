@@ -1,127 +1,280 @@
 questions = [
-    {"id": 1, "question": "In Kubernetes, what does 'CrashLoopBackOff' status mean?", "options": [
-        "Pod is scheduled to a node but not started",
-        "Pod is running successfully",
-        "Pod is repeatedly crashing after starting",
-        "Pod is stuck in image pulling"
-    ], "answer": "Pod is repeatedly crashing after starting"},
-
-    {"id": 2, "question": "Which Terraform command is used to refresh the state file with real infrastructure?", "options": [
-        "terraform plan",
-        "terraform apply",
-        "terraform init",
-        "terraform refresh"
-    ], "answer": "terraform refresh"},
-
-    {"id": 3, "question": "In Jenkins, what is a 'Declarative Pipeline'?", "options": [
-        "Pipeline written in shell script",
-        "Pipeline defined using JSON",
-        "Pipeline using a defined syntax structure in Jenkinsfile",
-        "None of the above"
-    ], "answer": "Pipeline using a defined syntax structure in Jenkinsfile"},
-
-    {"id": 4, "question": "Which file defines playbooks in Ansible?", "options": [
-        "JSON",
-        "YAML",
-        "INI",
-        "XML"
-    ], "answer": "YAML"},
-
-    {"id": 5, "question": "Which Dockerfile instruction is used to set environment variables?", "options": [
-        "ARG", "FROM", "ENV", "RUN"
-    ], "answer": "ENV"},
-
-    {"id": 6, "question": "What is the default namespace in Kubernetes?", "options": [
-        "kube-public", "default", "system", "dev"
-    ], "answer": "default"},
-
-    {"id": 7, "question": "What is the purpose of 'terraform taint'?", "options": [
-        "To destroy the entire infrastructure",
-        "To refresh the state file",
-        "To mark a resource for recreation",
-        "To rollback changes"
-    ], "answer": "To mark a resource for recreation"},
-
-    {"id": 8, "question": "What is a 'canary deployment'?", "options": [
-        "Deploying all at once",
-        "Testing on staging only",
-        "Releasing new version to small user base",
-        "Rolling back code automatically"
-    ], "answer": "Releasing new version to small user base"},
-
-    {"id": 9, "question": "In Prometheus, what is a metric type?", "options": [
-        "Counter", "Gauge", "Histogram", "All of the above"
-    ], "answer": "All of the above"},
-
-    {"id": 10, "question": "Which of the following is used to install Docker on Ubuntu?", "options": [
-        "apt-get install docker-ce", "yum install docker", "docker install", "pip install docker"
-    ], "answer": "apt-get install docker-ce"},
-
-    {"id": 11, "question": "What is the main purpose of 'etcd' in Kubernetes?", "options": [
-        "Storing pod logs", "Managing deployments", "Configuration store and key-value store", "Running containers"
-    ], "answer": "Configuration store and key-value store"},
-
-    {"id": 12, "question": "Which plugin in Jenkins is used to integrate with GitHub?", "options": [
-        "GitHub Plugin", "SCM Plugin", "Webhook Plugin", "Pipeline Plugin"
-    ], "answer": "GitHub Plugin"},
-
-    {"id": 13, "question": "What does 'Immutable Infrastructure' mean?", "options": [
-        "Infrastructure cannot be modified after deployment",
-        "Infrastructure changes automatically",
-        "Infrastructure resets every hour",
-        "Infrastructure is flexible"
-    ], "answer": "Infrastructure cannot be modified after deployment"},
-
-    {"id": 14, "question": "Which of the following tools is primarily used for configuration management?", "options": [
-        "Kubernetes", "Ansible", "Docker", "Terraform"
-    ], "answer": "Ansible"},
-
-    {"id": 15, "question": "What is a node pool in Kubernetes?", "options": [
-        "A group of services", "A set of pods", "A set of nodes with common configuration", "None"
-    ], "answer": "A set of nodes with common configuration"},
-
-    {"id": 16, "question": "What command lists all Terraform-managed resources?", "options": [
-        "terraform graph", "terraform show", "terraform output", "terraform state list"
-    ], "answer": "terraform state list"},
-
-    {"id": 17, "question": "Which command builds a Docker image?", "options": [
-        "docker run", "docker build", "docker exec", "docker commit"
-    ], "answer": "docker build"},
-
-    {"id": 18, "question": "What is the role of kubelet in Kubernetes?", "options": [
-        "Load balancer", "Pod monitor on nodes", "Stores logs", "None"
-    ], "answer": "Pod monitor on nodes"},
-
-    {"id": 19, "question": "In Jenkinsfile, which block is used to define stages?", "options": [
-        "pipeline", "stages", "jobs", "script"
-    ], "answer": "stages"},
-
-    {"id": 20, "question": "What does IaC stand for?", "options": [
-        "Internet and Cloud", "Infrastructure as Code", "Input and Code", "Infra access Control"
-    ], "answer": "Infrastructure as Code"},
-
-    {"id": 21, "question": "Which command creates an EC2 instance in Terraform?", "options": [
-        "resource 'aws_instance'", "create aws_instance", "ec2.run", "aws_instance_create"
-    ], "answer": "resource 'aws_instance'"},
-
-    {"id": 22, "question": "What is 'blue-green deployment'?", "options": [
-        "Random deployments", "Using Kubernetes nodes", "Two environments: current & new version", "Deploying in blue color"
-    ], "answer": "Two environments: current & new version"},
-
-    {"id": 23, "question": "What does `docker-compose up` do?", "options": [
-        "Deletes all containers", "Stops all services", "Starts and builds services", "Only builds images"
-    ], "answer": "Starts and builds services"},
-
-    {"id": 24, "question": "What is the default port for Prometheus server?", "options": [
-        "9090", "8080", "7070", "3000"
-    ], "answer": "9090"},
-
-    {"id": 25, "question": "What is the primary goal of DevOps?", "options": [
-        "Faster code commits", "Infrastructure monitoring", "CI/CD and collaboration between Dev and Ops", "Just automation"
-    ], "answer": "CI/CD and collaboration between Dev and Ops"},
+  {
+    "id": 1,
+    "question": "In Terraform, which file usually contains terraform init-specific definitions?",
+    "options": [
+      "outputs.tf",
+      "backend.tf",
+      "main.tf",
+      "variables.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 2,
+    "question": "In Terraform, which file usually contains terraform plan-specific definitions?",
+    "options": [
+      "main.tf",
+      "variables.tf",
+      "backend.tf",
+      "outputs.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 3,
+    "question": "Which Terraform meta-argument works with 'data' to control resource recreation?",
+    "options": [
+      "depends_on",
+      "provider",
+      "provisioner",
+      "lifecycle"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 4,
+    "question": "What type does Terraform 'prevent_destroy' represent?",
+    "options": [
+      "resource",
+      "variable",
+      "data",
+      "provider"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 5,
+    "question": "Which Terraform meta-argument works with 'for_each' to control resource recreation?",
+    "options": [
+      "depends_on",
+      "provider",
+      "provisioner",
+      "lifecycle"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 6,
+    "question": "What type does Terraform 'local-exec' represent?",
+    "options": [
+      "resource",
+      "data",
+      "provider",
+      "variable"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 7,
+    "question": "In Terraform, which file usually contains provider-specific definitions?",
+    "options": [
+      "backend.tf",
+      "main.tf",
+      "variables.tf",
+      "outputs.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 8,
+    "question": "Which Terraform meta-argument works with 'zipmap' to control resource recreation?",
+    "options": [
+      "depends_on",
+      "provider",
+      "provisioner",
+      "lifecycle"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 9,
+    "question": "What type does Terraform 'tuple' represent?",
+    "options": [
+      "resource",
+      "provider",
+      "data",
+      "variable"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 10,
+    "question": "In Terraform, which file usually contains regex-specific definitions?",
+    "options": [
+      "outputs.tf",
+      "backend.tf",
+      "variables.tf",
+      "main.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 11,
+    "question": "What is the function of the Terraform 'variable' block?",
+    "options": [
+      "Creates cloud provider configuration",
+      "Outputs computed values",
+      "Stores plan state",
+      "Defines resource dependencies"
+    ],
+    "answer": "Defines resource dependencies"
+  },
+  {
+    "id": 12,
+    "question": "What does the 'terraform output' command do in Terraform?",
+    "options": [
+      "Formats code",
+      "Initializes configuration",
+      "Destroys resources",
+      "Executes infrastructure changes"
+    ],
+    "answer": "Executes infrastructure changes"
+  },
+  {
+    "id": 13,
+    "question": "Which Terraform meta-argument works with 'outputs.tf' to control resource recreation?",
+    "options": [
+      "provisioner",
+      "lifecycle",
+      "depends_on",
+      "provider"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 14,
+    "question": "In Terraform, which file usually contains count-specific definitions?",
+    "options": [
+      "variables.tf",
+      "outputs.tf",
+      "backend.tf",
+      "main.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 15,
+    "question": "What does the 'map' command do in Terraform?",
+    "options": [
+      "Formats code",
+      "Initializes configuration",
+      "Executes infrastructure changes",
+      "Destroys resources"
+    ],
+    "answer": "Executes infrastructure changes"
+  },
+  {
+    "id": 16,
+    "question": "In Terraform, which file usually contains terraform destroy-specific definitions?",
+    "options": [
+      "backend.tf",
+      "outputs.tf",
+      "variables.tf",
+      "main.tf"
+    ],
+    "answer": "main.tf"
+  },
+  {
+    "id": 17,
+    "question": "Which Terraform meta-argument works with 'output' to control resource recreation?",
+    "options": [
+      "lifecycle",
+      "provisioner",
+      "provider",
+      "depends_on"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 18,
+    "question": "What type does Terraform 'terraform validate' represent?",
+    "options": [
+      "provider",
+      "resource",
+      "data",
+      "variable"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 19,
+    "question": "What type does Terraform 'element' represent?",
+    "options": [
+      "data",
+      "resource",
+      "variable",
+      "provider"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 20,
+    "question": "What is the function of the Terraform 'object' block?",
+    "options": [
+      "Defines resource dependencies",
+      "Creates cloud provider configuration",
+      "Stores plan state",
+      "Outputs computed values"
+    ],
+    "answer": "Defines resource dependencies"
+  },
+  {
+    "id": 21,
+    "question": "What type does Terraform 'terraform cloud' represent?",
+    "options": [
+      "data",
+      "provider",
+      "resource",
+      "variable"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 22,
+    "question": "What type does Terraform 'depends_on' represent?",
+    "options": [
+      "provider",
+      "data",
+      "resource",
+      "variable"
+    ],
+    "answer": "resource"
+  },
+  {
+    "id": 23,
+    "question": "Which Terraform meta-argument works with 'terraform backend' to control resource recreation?",
+    "options": [
+      "depends_on",
+      "provider",
+      "lifecycle",
+      "provisioner"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 24,
+    "question": "Which Terraform meta-argument works with 'terraform apply' to control resource recreation?",
+    "options": [
+      "provider",
+      "depends_on",
+      "provisioner",
+      "lifecycle"
+    ],
+    "answer": "lifecycle"
+  },
+  {
+    "id": 25,
+    "question": "What type does Terraform 'terraform taint' represent?",
+    "options": [
+      "data",
+      "provider",
+      "variable",
+      "resource"
+    ],
+    "answer": "resource"
+  }
 ]
-
-
 # Optional function to get questions (for modular import)
 def get_questions():
     return questions
